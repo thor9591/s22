@@ -1,0 +1,45 @@
+//s22
+#include<stdio.h>
+struct city
+{
+char c[100];
+};
+void main()
+{
+int i=0,n=0;
+char key[100];
+struct city a[100];
+FILE *s;
+s=fopen("cities.txt","r");
+if(s==NULL)
+{
+printf("Error opening file");
+}
+else
+{
+while(!feof(s))
+{
+fscanf(s,"%s",a[i].c);
+n++;
+i++;
+}
+printf("\nEnter the key to be searched:");
+scanf("%s",&key);
+for(i=0;i<n;i++)
+{
+if((strcmp(key,a[i].c))==0)
+{
+printf("\nSTD Code %d ",a[i].n);
+return;
+}
+}
+printf("\nCity not found");
+}
+}
+
+
+
+
+//cc filename.h
+//cc filename.c
+//  ./a.out
